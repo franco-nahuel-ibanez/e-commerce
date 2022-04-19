@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 app.use('/productos', require('./rutas/productos'));
-app.use('/api/carrito', require('./rutas/carritos'));
+app.use('/carrito', require('./rutas/carritos'));
 
 app.use(notFound)
 
