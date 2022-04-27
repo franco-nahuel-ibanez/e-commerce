@@ -1,14 +1,13 @@
-//crear un producto
-{
-    "nombre": "Notebook",
-    "descripcion": "Lenovo 320",
-    "codigo": "456",
-    "url": "notebook.jpg",
-    "precio": "4599",
-    "stock": "11"
-}
-
-//agregar un producto a un carrito existente
-{
-    "id_prod":1
-}
+[
+    {
+        "nombre": "Notebook",
+        "descripcion": "Lenovo 320",
+        "codigo": "456",
+        "url": "notebook.jpg",
+        "precio": "4599",
+        "stock": "11"
+    },
+    {
+        "id_prod":1
+    }
+]
