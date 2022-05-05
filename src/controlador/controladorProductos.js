@@ -1,4 +1,4 @@
-const ProductosDao = require('../dao/productosDao');
+const {ProductosDao} = require('../dao/index');
 const productos = new ProductosDao();
 
 exports.getProducts = async(req, res, next) => {
@@ -6,7 +6,6 @@ exports.getProducts = async(req, res, next) => {
     try {
         if(id){
             const producto = await productos.getById(id);
-            console.log(producto)
             if(!producto) return res.status(404).json({'error': 'not found.'});
             return res.status(200).json(producto);
         }
@@ -32,12 +31,12 @@ exports.addProducts = async(req, res, next) => {
 
 exports.updateProducts = async (req, res, next) => {
     const {id} = req.params;
-    // const {nombre, descripcion, codigo, url, precio, stock} = req.body;
+    const {nombre, descripcion, codigo, url, precio, stock} = req.body;
 
-    // if(!nombre || !descripcion || !codigo || !url || !precio || !stock) return res.status(400).json({'error': 'all data is required'});
+    if(!nombre || !descripcion || !codigo || !url || !precio || !stock) return res.status(400).json({'error': 'all data is required'});
     try {
-        const producto = await productos.update(id, req.body);
-        res.status(200).json(producto);
+        const nuevoProducto = await productos.update(id, req.body);
+        res.status(200).json(nuevoProducto);
     } catch (error) {
         next()
     }

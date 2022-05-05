@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const {Schema, model} = require('mongoose');
 
 const productosSchema = new Schema({
     nombre: {
@@ -28,7 +28,12 @@ const productosSchema = new Schema({
     stock: {
         type: Number,
         default: 1
+    },
+    id_cart:{
+        type: String,
+        default: '0'
     }
 })
+
 
 module.exports = model('Productos', productosSchema);

@@ -48,7 +48,8 @@ class ProductosDao {
 
     async update(id, newObject){
         try {
-            await Productos.findByIdAndUpdate(id, newObject, {new: true})
+            const nuevoProducto = await Productos.findByIdAndUpdate(id, newObject, {new: true})
+            return nuevoProducto
         } catch (error) {
             console.log(error)
         }
